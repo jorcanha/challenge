@@ -18,7 +18,7 @@ public class TransactionDTO {
 	private Long accountId;
 	
 	@JsonProperty("Tipo movimiento")
-	private String transaction_type;
+	private String transactionType;
 		
 	@JsonProperty("Fecha")
 	private Date date;

@@ -26,8 +26,8 @@ public class Transaction {
 	@JoinColumn(name = "account_id")
 	private Account account;
 
-	@Column(name = "transactionType")
-	private String transaction_type;
+	@Column(name = "transaction_type")
+	private String transactionType;
 	
 	@Column(name = "date")
 	private Date date;

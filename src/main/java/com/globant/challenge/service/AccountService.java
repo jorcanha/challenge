@@ -24,7 +24,7 @@ public class AccountService {
 
 	@Autowired
 	private TransactionService transactionService;
-	
+
 	@Autowired
 	private AccountRepository accountRepository;
 	
@@ -55,26 +55,31 @@ public class AccountService {
 	public String createAccount(AccountDTO accountDTO) {
 		
 		Optional<Customer> customer = customerRepository.findById(accountDTO.getCustomerId());
-		
+
 		Account newAccount = new Account();
-		
+
 		newAccount.setCustomer(customer.get());
 		newAccount.setAccountNumber(accountDTO.getAccountNumber());
 		newAccount.setAccountType(accountDTO.getAccountType());
 		newAccount.setInitialBalance(accountDTO.getInitialBalance());
 		newAccount.setStatus(accountDTO.getStatus());
-		
+
 		newAccount = accountRepository.save(newAccount);
 
-		TransactionDTO transactionDTO = new TransactionDTO();
-		transactionDTO.setTransaction_type("Deposito");
-		transactionDTO.setDate(new Date());
-		transactionDTO.setAmount(accountDTO.getInitialBalance());
-		transactionDTO.setBalance(accountDTO.getInitialBalance());
-		
-		String result = transactionService.createTransaction(transactionDTO, newAccount);
-		LOG.debug("Creatin initial transaction for new account {}", result);
-		
+		createInitialTransaction(newAccount);
+
 		return String.format("Created new Account with id %s for Customer %s", newAccount.getAccountId(), customer.get().getCustomerId());
+	}
+
+	private void createInitialTransaction(Account account) {
+
+		TransactionDTO transactionDTO = new TransactionDTO();
+		transactionDTO.setTransactionType("Deposito");
+		transactionDTO.setDate(new Date());
+		transactionDTO.setAmount(account.getInitialBalance());
+		transactionDTO.setBalance(account.getInitialBalance());
+
+		String result = transactionService.createTransaction(transactionDTO, account);
+		LOG.debug("Creatin initial transaction for new account {}", result);
 	}
 }
