@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "7841a65d-9e02-45ee-8b65-a93c4e296b9b",
+		"name": "Globant-BancoPichincha-TechChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1282498"
+	},
+	"item": [
+		{
+			"name": "Cliente 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Identificación\": \"1234\",\n  \"Nombre\": \"Jose Lema\",\n  \"Dirección\": \"Otavalo sn y principal\",\n  \"Teléfono\": \"098254785\",\n  \"Edad\": 20,\n  \"Género\": \"male\",\n  \"Contraseña\": \"1234\",\n  \"Estado\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost/clientes/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"clientes",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Identificación\": \"2345\",\n  \"Nombre\": \"Marianela Montalvo\",\n  \"Dirección\": \"Amazonas y NNUU\",\n  \"Teléfono\": \"097548965\",\n  \"Edad\": 30,\n  \"Género\": \"female\",\n  \"Contraseña\": \"5678\",\n  \"Estado\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost/clientes/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"clientes",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Identificación\": \"\",\n  \"Nombre\": \"Juan Osoario\",\n  \"Dirección\": \"13 de Junio y Equinoccial\",\n  \"Teléfono\": \"098874587\",\n  \"Edad\": 40,\n  \"Género\": \"male\",\n  \"Contraseña\": \"1245\",\n  \"Estado\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost/clientes/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"clientes",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cuenta 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_id\": 1,\n  \"Número cuenta\": \"478758\",\n  \"Tipo\": \"Ahorro\",\n  \"Saldo Inicial\": 2000,\n  \"Estado\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost/cuentas/cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cuentas",
+						"cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cuenta 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_id\": 2,\n  \"Número cuenta\": \"225487\",\n  \"Tipo\": \"Corriente\",\n  \"Saldo Inicial\": 100,\n  \"Estado\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost/cuentas/cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cuentas",
+						"cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cuenta 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_id\": 3,\n  \"Número cuenta\": \"495878\",\n  \"Tipo\": \"Ahorro\",\n  \"Saldo Inicial\": 0,\n  \"Estado\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost/cuentas/cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cuentas",
+						"cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cuenta 4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_id\": 2,\n  \"Número cuenta\": \"496825\",\n  \"Tipo\": \"Ahorro\",\n  \"Saldo Inicial\": 540,\n  \"Estado\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost/cuentas/cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cuentas",
+						"cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cuenta 5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_id\": 1,\n  \"Número cuenta\": \"585545\",\n  \"Tipo\": \"Corriente\",\n  \"Saldo Inicial\": 1000,\n  \"Estado\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost/cuentas/cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cuentas",
+						"cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimiento 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"account_id\": 1,\n  \"Tipo movimiento\": \"Retiro\",\n  \"Fecha\": \"\",\n  \"Valor\": -575,\n  \"Saldo\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost/movimientos/movimiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"movimientos",
+						"movimiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimiento 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"account_id\": 2,\n  \"Tipo movimiento\": \"Deposito\",\n  \"Fecha\": \"\",\n  \"Valor\": 600,\n  \"Saldo\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost/movimientos/movimiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"movimientos",
+						"movimiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimiento 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"account_id\": 3,\n  \"Tipo movimiento\": \"Deposito\",\n  \"Fecha\": \"\",\n  \"Valor\": 150,\n  \"Saldo\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost/movimientos/movimiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"movimientos",
+						"movimiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimiento 4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"account_id\": 4,\n  \"Tipo movimiento\": \"Retiro\",\n  \"Fecha\": \"\",\n  \"Valor\": 540,\n  \"Saldo\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost/movimientos/movimiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"movimientos",
+						"movimiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All cuentas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/hal+json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/cuentas/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cuentas",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

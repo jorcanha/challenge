@@ -51,17 +51,24 @@ public class TransactionService {
 
 	public String createTransaction(TransactionDTO transactionDTO) {
 
-		Optional<Account> account = accountRepository.findById(transactionDTO.getAccountId());;
+		LOG.debug("fetching account with Id {}, ", transactionDTO.getAccountId());
+
+		Optional<Account> account = accountRepository.findById(transactionDTO.getAccountId());
+
+		LOG.debug("Account number {} Customer {}", account.get().getAccountNumber(), account.get().getCustomer().getPerson().getName());
+
+		LOG.debug("Fetching last transaction");
+
 		Transaction lastTransaction = transactionRepository.findFirstByAccountOrderByDateDesc(account.get());
 
-		LOG.debug("lastTransaction: {}", lastTransaction.toString());
-		
+		LOG.debug("Actual balance {} for account {}", lastTransaction.getBalance() , account.get().getAccountNumber());
+
 		if(transactionDTO.getAmount() == 0) {
 			return "No se permiten movimientos sin valor";
 		}
-		
+
 		String transactionType = transactionType(transactionDTO.getAmount());
-		
+
 		if( transactionType.equals("Retiro") && lastTransaction.getBalance() == 0 ) {
 			return "Saldo no disponible";
 		}
@@ -69,7 +76,7 @@ public class TransactionService {
 		if(transactionType.equals("Retiro") ) {
 			Double newBalance = lastTransaction.getAmount() + transactionDTO.getAmount();
 			if( newBalance < 0 ) {
-				return "El valor el retiro upera el saldo disponible";
+				return "El valor el retiro supera el saldo disponible";
 			}
 		}
 		
@@ -81,10 +88,10 @@ public class TransactionService {
 		transaction.setBalance( lastTransaction.getBalance() + transactionDTO.getAmount() );
 
 		transaction.setAccount(account.get());
-
+	
 		transaction = transactionRepository.save(transaction);
 
-		return String.format("Transaction created sucessfully with id %s", transaction.getTransactionId());
+		return String.format("Transaction created sucessfully with id %s and new balance %s", transaction.getTransactionId(), transaction.getBalance());
 	}
 
 	/**

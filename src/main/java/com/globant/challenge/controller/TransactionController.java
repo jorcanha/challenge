@@ -31,6 +31,6 @@ public class TransactionController {
 
 	@PostMapping("movimiento")
 	public String createTransaction(@RequestBody TransactionDTO transactionDTO) {
-		return transactionService.createTransaction(null);
+		return transactionService.createTransaction(transactionDTO);
 	}
 }
