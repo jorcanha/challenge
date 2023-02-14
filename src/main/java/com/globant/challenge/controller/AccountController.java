@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.globant.challenge.dto.AccountDTO;
-import com.globant.challenge.model.Account;
 import com.globant.challenge.service.AccountService;
 
 @RestController
